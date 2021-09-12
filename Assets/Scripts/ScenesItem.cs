@@ -7,18 +7,19 @@ public class ScenesItem : MonoBehaviour
     //物體的數據倉庫
     public Item item;
     //背包的數據倉庫
-    public ItemList mainItem;
-    private void OnTriggerEnter(Collider other)
+    public ItemList itemList;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
 
-            if (!mainItem.itemList.Contains(item))
+            if (!itemList.itemList.Contains(item))
             {
-                mainItem.itemList.Add(item);
+                itemList.itemList.Add(item);
             }
             item.itemNum += 1;
-//Destroy(this.gameObject);
+            Debug.Log(item.itemNum);
         }
     }
+
 }
