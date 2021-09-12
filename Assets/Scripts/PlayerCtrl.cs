@@ -15,7 +15,6 @@ public class PlayerCtrl : MonoBehaviour
     BoxCollider2D boxCollider;
     public float speed = 10.0f;
     public static bool CanMove = true;
-    public GameObject myBagUI;
     private bool isPlay;
     // Start is called before the first frame update
     void Start()
@@ -29,11 +28,6 @@ public class PlayerCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            isPlay = !isPlay;
-            myBagUI.SetActive(isPlay);
-        }
     }
 
     private void FixedUpdate()
